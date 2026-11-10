@@ -1,0 +1,295 @@
+% ======================================================================
+\chapter[Оператор момента импульса]%
+        {Оператор момента импульса. Собственные значения \texorpdfstring{$L_z$ и $L^2$}{Lz и L²}}
+\label{t:09}
+% ======================================================================
+
+\begin{qbox}
+\textbf{Билет 9.} Оператор момента импульса. Собственные функции и собственные значения
+оператора $L_z$ ($z$-компоненты момента импульса) в сферических координатах. Собственные значения
+оператора квадрата момента импульса $L^2$ (без вывода).
+\end{qbox}
+
+\section{Содержание билета}
+
+\textbf{Подтемы:}
+\begin{enumerate}
+ \item оператор момента импульса $\op{\vect L}=\vect r\times\op{\vect p}$, его компоненты в декартовых координатах;
+ \item коммутационные соотношения и их следствие: одновременно измеримы лишь $L^2$ и одна проекция;
+ \item $\op L_z=-\ii\hbar\,\partial/\partial\varphi$ в сферических координатах; собственные функции $\ee^{\ii m\varphi}$ и значения $m\hbar$;
+ \item собственные значения $L^2=\hbar^2l(l+1)$ \emph{(без вывода)}; сферические функции; векторная модель.
+\end{enumerate}
+
+\textbf{Необходимые понятия:} операторы, коммутаторы, собственные функции (\tref{t:05});
+сферические координаты $(r,\theta,\varphi)$; классический момент импульса.
+
+\section{Определения и физические принципы}
+
+\begin{definition}[оператор момента импульса]
+По правилу соответствия $\vect L=\vect r\times\vect p\to\op{\vect L}=\vect r\times\op{\vect p}=-\ii\hbar\,\vect r\times\nabla$:
+\begin{equation}\label{eq:9:L}
+  \op L_x=-\ii\hbar\Bigl(y\pdiff{}{z}-z\pdiff{}{y}\Bigr),\quad
+  \op L_y=-\ii\hbar\Bigl(z\pdiff{}{x}-x\pdiff{}{z}\Bigr),\quad
+  \op L_z=-\ii\hbar\Bigl(x\pdiff{}{y}-y\pdiff{}{x}\Bigr),
+\end{equation}
+$\op L^2=\op L_x^2+\op L_y^2+\op L_z^2$. Порядок сомножителей несуществен: $y$ и $\op p_z$ коммутируют.
+\end{definition}
+
+\begin{definition}[квантовые числа момента]
+$l=0,1,2,\dots$ — \emph{орбитальное} (азимутальное) квантовое число, определяющее $L^2=\hbar^2l(l+1)$;
+$m=-l,\dots,l$ — \emph{магнитное} квантовое число, $L_z=m\hbar$. Состояния с $l=0,1,2,3,4$
+обозначают буквами $s,p,d,f,g$.
+\end{definition}
+
+\emph{Физический смысл.} Момент импульса сохраняется в центрально-симметричном поле
+($\op L^2$ и $\op L_z$ коммутируют с гамильтонианом); поэтому квантовые числа $l,m$ классифицируют
+состояния атомов, ядер, молекул. Квантование момента — следствие однозначности волновой функции
+при повороте на $2\pi$, а не постулат, как у Бора.
+
+\emph{Область применимости.} Речь идёт об \emph{орбитальном} моменте частицы, связанном с её
+движением в пространстве. Собственный момент (спин, \tref{t:12}) описывается теми же коммутационными
+соотношениями, но может принимать и полуцелые значения; орбитальный — только целые.
+
+\section{Основная теория}
+
+\subsection{Коммутационные соотношения}
+
+Из $[\op x,\op p_x]=\ii\hbar$ следует (вывод~\ref{der:9:comm})
+\begin{equation}\label{eq:9:comm}
+  [\op L_x,\op L_y]=\ii\hbar\op L_z,\qquad [\op L_y,\op L_z]=\ii\hbar\op L_x,\qquad [\op L_z,\op L_x]=\ii\hbar\op L_y,
+\end{equation}
+\begin{equation}\label{eq:9:L2comm}
+  [\op L^2,\op L_x]=[\op L^2,\op L_y]=[\op L^2,\op L_z]=0 .
+\end{equation}
+\textbf{Следствия.} (1) Разные проекции момента не измеримы одновременно: если $L_z$ определена,
+то $L_x$ и $L_y$ не имеют определённых значений (исключение — состояние $l=0$, где все проекции нули).
+(2) Квадрат момента и одна (любая) проекция измеримы одновременно. Принято выбирать ось $z$;
+состояние задаётся парой $(l,m)$. (3) Вектор $\vect L$ не может быть определён полностью — нельзя
+сказать, «куда он направлен».
+
+\subsection{Оператор $\op L_z$ в сферических координатах}
+
+В сферических координатах $x=r\sin\theta\cos\varphi$, $y=r\sin\theta\sin\varphi$, $z=r\cos\theta$
+(вывод~\ref{der:9:Lz}):
+\begin{equation}\label{eq:9:Lzsph}
+  \op L_z=-\ii\hbar\pdiff{}{\varphi}.
+\end{equation}
+$\op L_z$ действует только на азимутальный угол — это генератор поворотов вокруг оси $z$, подобно тому
+как $\op p_x=-\ii\hbar\,\partial/\partial x$ — генератор сдвигов вдоль $x$.
+
+\subsection{Собственные функции и значения $\op L_z$}
+
+Уравнение $\op L_z\Phi=L_z\Phi$ решается элементарно (вывод~\ref{der:9:eig}):
+\begin{equation}\label{eq:9:Phim}
+  \Phi_m(\varphi)=\frac{1}{\sqrt{2\pi}}\ee^{\ii m\varphi},\qquad L_z=m\hbar,\qquad m=0,\pm1,\pm2,\dots
+\end{equation}
+Дискретность — следствие требования однозначности: точкам $\varphi$ и $\varphi+2\pi$ отвечает одна и та же
+точка пространства. Функции ортонормированы на $[0,2\pi)$:
+$\int_0^{2\pi}\Phi_{m'}^*\Phi_m\dd\varphi=\delta_{mm'}$. В состоянии $\Phi_m$ плотность вероятности
+$|\Phi_m|^2=1/2\pi$ не зависит от $\varphi$ — азимутальный угол полностью неопределён (аналог
+соотношения неопределённостей для пары $\varphi$, $L_z$).
+
+\subsection{Квадрат момента (без вывода)}
+
+В сферических координатах $\op L^2$ действует только на углы:
+\begin{equation}\label{eq:9:L2}
+  \op L^2=-\hbar^2\Bigl[\frac{1}{\sin\theta}\pdiff{}{\theta}\Bigl(\sin\theta\pdiff{}{\theta}\Bigr)
+  +\frac{1}{\sin^2\theta}\pdiff{^2}{\varphi^2}\Bigr]\equiv-\hbar^2\Delta_{\theta,\varphi},
+\end{equation}
+где $\Delta_{\theta,\varphi}$ — угловая часть лапласиана: $\nabla^2=\frac{1}{r^2}\pdiff{}{r}\bigl(r^2\pdiff{}{r}\bigr)+\frac{1}{r^2}\Delta_{\theta,\varphi}$.
+
+\begin{principle}{Собственные значения $\op L^2$ (без вывода)}
+Однозначные и конечные на сфере решения уравнения $\op L^2Y=L^2Y$ существуют только при
+\begin{equation}\label{eq:9:L2eig}
+  L^2=\hbar^2l(l+1),\qquad l=0,1,2,\dots,
+\end{equation}
+причём при данном $l$ проекция $L_z=m\hbar$ может принимать $2l+1$ значений $m=-l,-l+1,\dots,l$.
+Общие собственные функции $\op L^2$ и $\op L_z$ — \emph{сферические функции}
+$Y_{lm}(\theta,\varphi)=\Theta_{lm}(\theta)\,\ee^{\ii m\varphi}$; уровень $L^2$ вырожден с кратностью $2l+1$.
+\end{principle}
+
+Примеры нормированных сферических функций ($\int|Y_{lm}|^2\sin\theta\,\dd\theta\,\dd\varphi=1$):
+\[
+  Y_{00}=\frac{1}{\sqrt{4\pi}},\qquad
+  Y_{10}=\sqrt{\frac{3}{4\pi}}\cos\theta,\qquad
+  Y_{1,\pm1}=\mp\sqrt{\frac{3}{8\pi}}\sin\theta\,\ee^{\pm\ii\varphi}.
+\]
+Проверка для $Y_{10}$ дана в выводе~\ref{der:9:Y10}.
+
+\paragraph{Почему $|m|\le l$.} В состоянии с определёнными $l,m$
+$\avg{L_x^2}+\avg{L_y^2}=\avg{L^2}-m^2\hbar^2=\hbar^2[l(l+1)-m^2]\ge0$, так как средние квадратов
+эрмитовых операторов неотрицательны. Значит, $m^2\le l(l+1)$, т.\,е. $|m|\le l$. При $|m|=l$ всё равно
+$\avg{L_x^2}+\avg{L_y^2}=\hbar^2l>0$: момент не может быть направлен точно вдоль оси $z$
+(иначе все три проекции были бы определены).
+
+\paragraph{Правдоподобность $l(l+1)$.} Для изотропного (неполяризованного) набора состояний
+с данным $l$ все три оси равноправны, поэтому $\avg{L^2}=3\avg{L_z^2}$. Усредняя $m^2$ по $2l+1$
+равновероятным значениям:
+\[
+  \avg{L_z^2}=\frac{\hbar^2}{2l+1}\sum_{m=-l}^{l}m^2=\frac{\hbar^2}{2l+1}\cdot\frac{l(l+1)(2l+1)}{3}=\frac{\hbar^2l(l+1)}{3},
+\]
+откуда $\avg{L^2}=\hbar^2l(l+1)$. Это не вывод~\eqref{eq:9:L2eig}, но наглядное объяснение,
+почему $L^2$ больше $(l\hbar)^2$.
+
+\subsection{Векторная модель}
+
+Наглядно вектор $\vect L$ длины $\hbar\sqrt{l(l+1)}$ прецессирует вокруг оси $z$ по конусу так, что
+проекция $L_z=m\hbar$ фиксирована, а $L_x$, $L_y$ не определены (рис.~\ref{fig:9:vector}). Угол
+конуса $\cos\theta_m=m/\sqrt{l(l+1)}$ никогда не равен 0 или $\pi$. При $l\gg1$
+$\sqrt{l(l+1)}\approx l+\frac12$, относительная неопределённость направления $\sim1/\sqrt l\to0$ —
+классический предел.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=0.9]
+  \def\R{2.449} % sqrt(6) for l=2
+  \draw[->, thick] (0,-2.9) -- (0,3.2) node[above] {$z$};
+  \draw[gray] (0,0) circle (\R);
+  \foreach \m in {-2,-1,0,1,2} {
+     \draw[dashed, gray] (-3.0,\m) -- (3.0,\m);
+     \node[right, font=\small] at (3.05,\m) {$m=\m$};
+     \pgfmathsetmacro{\x}{sqrt(6-\m*\m)}
+     \draw[very thick, accent, ->] (0,0) -- (\x,\m);
+     \draw[accent!50] (-\x,\m) -- (\x,\m);
+  }
+  \node[font=\small, accent] at (1.9,2.45) {$|\vect L|=\hbar\sqrt6$};
+  \draw[keycol, thick] (0,2) ellipse ({sqrt(2)} and 0.22);
+  \node[font=\small, align=left] at (-2.9,2.6) {конус\\прецессии};
+  \draw[->, thin] (-2.3,2.3) -- (-1.2,2.05);
+  \node[font=\small] at (0.35,-2.75) {$0$};
+\end{tikzpicture}
+\caption{Векторная модель для $l=2$: длина вектора момента $\hbar\sqrt{l(l+1)}=\hbar\sqrt6\approx2{,}45\hbar$,
+возможные проекции $L_z=m\hbar$, $m=-2,\dots,2$ (единица по оси $z$ — $\hbar$). Для $m=2$ показан конус,
+по которому «распределены» неопределённые компоненты $L_x$, $L_y$.}
+\label{fig:9:vector}
+\end{figure}
+
+\section{Математические выводы}
+
+\begin{derivation}[label=der:9:comm]{коммутатор $[\op L_x,\op L_y]=\ii\hbar\op L_z$}
+Используем $[\op x_i,\op p_j]=\ii\hbar\delta_{ij}$, $[\op x_i,\op x_j]=[\op p_i,\op p_j]=0$ и тождество
+$[\op A,\op B\op C]=[\op A,\op B]\op C+\op B[\op A,\op C]$.
+\[
+  [\op L_x,\op L_y]=[\,y\op p_z-z\op p_y,\ z\op p_x-x\op p_z\,]
+  =[y\op p_z,z\op p_x]-[y\op p_z,x\op p_z]-[z\op p_y,z\op p_x]+[z\op p_y,x\op p_z].
+\]
+Второй и третий коммутаторы равны нулю (в них нет сопряжённых пар). В первом не коммутируют
+только $\op p_z$ и $z$: $[y\op p_z,z\op p_x]=y\op p_x[\op p_z,z]=-\ii\hbar\,y\op p_x$. В четвёртом:
+$[z\op p_y,x\op p_z]=x\op p_y[z,\op p_z]=\ii\hbar\,x\op p_y$. Итого
+\[
+  [\op L_x,\op L_y]=\ii\hbar(x\op p_y-y\op p_x)=\ii\hbar\op L_z .
+\]
+Остальные соотношения~\eqref{eq:9:comm} получаются циклической перестановкой $x\to y\to z\to x$.
+
+\emph{Коммутатор с $\op L^2$.} Например,
+\begin{align*}
+ [\op L^2,\op L_z]&=[\op L_x^2,\op L_z]+[\op L_y^2,\op L_z]
+ =\op L_x[\op L_x,\op L_z]+[\op L_x,\op L_z]\op L_x+\op L_y[\op L_y,\op L_z]+[\op L_y,\op L_z]\op L_y\\
+ &=-\ii\hbar(\op L_x\op L_y+\op L_y\op L_x)+\ii\hbar(\op L_y\op L_x+\op L_x\op L_y)=0 .
+\end{align*}
+\end{derivation}
+
+\begin{derivation}[label=der:9:Lz]{$\op L_z=-\ii\hbar\,\partial/\partial\varphi$}
+Рассмотрим функцию $\psi(x,y,z)$ как функцию сферических координат. По правилу дифференцирования
+сложной функции
+\[
+  \pdiff{\psi}{\varphi}=\pdiff{\psi}{x}\pdiff{x}{\varphi}+\pdiff{\psi}{y}\pdiff{y}{\varphi}+\pdiff{\psi}{z}\pdiff{z}{\varphi}.
+\]
+Из $x=r\sin\theta\cos\varphi$, $y=r\sin\theta\sin\varphi$, $z=r\cos\theta$:
+$\pdiff{x}{\varphi}=-r\sin\theta\sin\varphi=-y$, $\pdiff{y}{\varphi}=r\sin\theta\cos\varphi=x$, $\pdiff{z}{\varphi}=0$. Следовательно,
+\[
+  \pdiff{}{\varphi}=x\pdiff{}{y}-y\pdiff{}{x}\quad\Longrightarrow\quad
+  \op L_z=-\ii\hbar\Bigl(x\pdiff{}{y}-y\pdiff{}{x}\Bigr)=-\ii\hbar\pdiff{}{\varphi}.
+\]
+\end{derivation}
+
+\begin{derivation}[label=der:9:eig]{собственные функции и собственные значения $\op L_z$}
+Уравнение $-\ii\hbar\,\dd\Phi/\dd\varphi=L_z\Phi$ — линейное первого порядка:
+\[
+  \frac{\dd\Phi}{\Phi}=\frac{\ii L_z}{\hbar}\dd\varphi\quad\Longrightarrow\quad\Phi(\varphi)=C\,\ee^{\ii L_z\varphi/\hbar}.
+\]
+\emph{Условие однозначности:} $\Phi(\varphi+2\pi)=\Phi(\varphi)$ $\Rightarrow$ $\ee^{2\pi\ii L_z/\hbar}=1$ $\Rightarrow$
+$L_z/\hbar=m$, $m\in\mathbb Z$. Итак, $L_z=m\hbar$.
+
+\emph{Нормировка:} $\int_0^{2\pi}|C|^2\dd\varphi=2\pi|C|^2=1$ $\Rightarrow$ $C=1/\sqrt{2\pi}$.
+
+\emph{Ортогональность:} $\frac{1}{2\pi}\int_0^{2\pi}\ee^{\ii(m-m')\varphi}\dd\varphi=\delta_{mm'}$.
+
+\emph{Эрмитовость} $\op L_z$ на периодических функциях проверяется интегрированием по частям:
+внеинтегральный член $[\Phi_1^*\Phi_2]_0^{2\pi}=0$ из-за периодичности. Поэтому собственные значения
+действительны, что согласуется с полученным результатом.
+\end{derivation}
+
+\begin{derivation}[label=der:9:Y10]{проверка: $Y_{10}\propto\cos\theta$ — собственная функция $\op L^2$ с $l=1$}
+$Y_{10}$ не зависит от $\varphi$, поэтому в~\eqref{eq:9:L2} остаётся только $\theta$-часть:
+\[
+  \frac{1}{\sin\theta}\diff{}{\theta}\Bigl(\sin\theta\diff{\cos\theta}{\theta}\Bigr)
+  =\frac{1}{\sin\theta}\diff{}{\theta}\bigl(-\sin^2\theta\bigr)=\frac{-2\sin\theta\cos\theta}{\sin\theta}=-2\cos\theta .
+\]
+Значит, $\op L^2Y_{10}=-\hbar^2(-2)Y_{10}=2\hbar^2Y_{10}=\hbar^2\cdot1\cdot(1+1)\,Y_{10}$, т.\,е. $l=1$; и
+$\op L_zY_{10}=0$, т.\,е. $m=0$. Аналогично для $Y_{11}\propto\sin\theta\,\ee^{\ii\varphi}$:
+$\frac{1}{\sin\theta}\frac{\dd}{\dd\theta}(\sin\theta\cos\theta)-\frac{\sin\theta}{\sin^2\theta}=\frac{\cos2\theta-1}{\sin\theta}=-2\sin\theta$ —
+снова $L^2=2\hbar^2$, а $L_z=\hbar$.
+\end{derivation}
+
+\begin{derivation}[label=der:9:sum]{сумма $\sum_{m=-l}^{l}m^2$}
+$\sum_{m=-l}^{l}m^2=2\sum_{m=1}^{l}m^2=2\cdot\frac{l(l+1)(2l+1)}{6}=\frac{l(l+1)(2l+1)}{3}$ — используется в оценке
+$\avg{L_z^2}=\hbar^2l(l+1)/3$ выше.
+\end{derivation}
+
+\section{Итоговые формулы}
+
+\keyformula{\op{\vect L}=-\ii\hbar\,\vect r\times\nabla,\qquad [\op L_x,\op L_y]=\ii\hbar\op L_z,\qquad [\op L^2,\op L_i]=0}
+ {$\op L_i$ — проекции, $\op L^2$ — квадрат момента; циклические перестановки $x\to y\to z$.}
+ {орбитальный момент частицы (те же коммутаторы — для любого момента, включая спин).}
+ {какие величины одновременно измеримы ($L^2$ и одна проекция).}
+
+\keyformula{\op L_z=-\ii\hbar\pdiff{}{\varphi},\qquad \Phi_m=\frac{\ee^{\ii m\varphi}}{\sqrt{2\pi}},\qquad L_z=m\hbar,\ m\in\mathbb Z}
+ {$\varphi$ — азимутальный угол, $m$ — магнитное квантовое число.}
+ {однозначная волновая функция (орбитальный момент).}
+ {спектр и собственные функции проекции момента.}
+
+\keyformula{L^2=\hbar^2l(l+1),\qquad l=0,1,2,\dots;\qquad m=-l,\dots,l\ \ (2l+1\ \text{значений})}
+ {$l$ — орбитальное квантовое число; $Y_{lm}(\theta,\varphi)$ — сферические функции.}
+ {без вывода; орбитальный момент.}
+ {классификация состояний в центральном поле ($s,p,d,f$); кратность вырождения.}
+
+\section{Физическая интерпретация}
+
+\textbf{Почему квантуется момент.} Требование однозначности $\Psi$ при повороте на $2\pi$ приводит
+к $L_z=m\hbar$; дискретность $L^2$ — следствие условий конечности на сфере. Бор постулировал
+$L=n\hbar$; квантовая механика даёт другое: $|\vect L|=\hbar\sqrt{l(l+1)}$, причём $l=0$ возможно
+(основное состояние водорода имеет нулевой момент).
+
+\textbf{Сохранение момента.} В центральном поле $U(r)$ операторы $\op L^2$ и $\op L_z$ коммутируют с
+$\op H$, поэтому их собственные значения — «хорошие» квантовые числа. Энергия не зависит от $m$
+(нет выделенного направления) — вырождение кратности $2l+1$. Магнитное поле выделяет ось $z$ и
+снимает это вырождение (эффект Зеемана, \tref{t:12}) — отсюда название «магнитное» число.
+
+\textbf{Связь с экспериментом.} Пространственное квантование проекции момента наблюдается в опыте
+Штерна--Герлаха и в расщеплении спектральных линий в магнитном поле на $2l+1$ (или $2j+1$) компонент.
+
+\section{Что необходимо знать на экзамене}
+
+\begin{examcheck}
+\checkhead{Определения}
+\begin{itemize}
+ \item $\op{\vect L}=\vect r\times\op{\vect p}$, компоненты в декартовых координатах; квантовые числа $l$, $m$; обозначения $s,p,d,f$.
+\end{itemize}
+\checkhead{Формулы}
+\begin{itemize}
+ \item $[\op L_x,\op L_y]=\ii\hbar\op L_z$ (и циклические), $[\op L^2,\op L_i]=0$;
+ \item $\op L_z=-\ii\hbar\,\partial_\varphi$, $\Phi_m=\ee^{\ii m\varphi}/\sqrt{2\pi}$, $L_z=m\hbar$;
+ \item $L^2=\hbar^2l(l+1)$, $|m|\le l$, кратность $2l+1$ (без вывода); $Y_{00}$, $Y_{10}$.
+\end{itemize}
+\checkhead{Выводы}
+\begin{itemize}
+ \item коммутатор $[\op L_x,\op L_y]$; переход к $\op L_z=-\ii\hbar\,\partial_\varphi$;
+ \item решение задачи на собственные значения $\op L_z$ с условием однозначности и нормировкой.
+\end{itemize}
+\checkhead{Интерпретации}
+\begin{itemize}
+ \item почему одновременно измеримы лишь $L^2$ и одна проекция; почему $|m|\le l$ и $L>l\hbar$;
+ \item векторная модель; классический предел $l\gg1$; связь с сохранением момента и вырождением по $m$.
+\end{itemize}
+\end{examcheck}

@@ -1,0 +1,271 @@
+% ======================================================================
+%  preamble.tex — оформление пособия «Квантовая физика: ответы на билеты»
+%  Компиляция: XeLaTeX (см. README.md)
+% ======================================================================
+
+% ---------- Геометрия страницы ----------
+\usepackage[a4paper,top=22mm,bottom=24mm,inner=24mm,outer=22mm,
+            headheight=14pt,headsep=8mm,footskip=11mm]{geometry}
+
+% ---------- Математика (до unicode-math) ----------
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+% ---------- Шрифты и язык ----------
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+
+% Computer Modern Unicode — полноценная кириллица, гармонирует с Latin Modern Math.
+% Файлы шрифтов лежат в каталоге fonts/ проекта (компилировать из корня проекта).
+\setmainfont{cmu-serif}[
+  Path           = fonts/,
+  Extension      = .ttf,
+  UprightFont    = *-500-roman,
+  ItalicFont     = *-500-italic,
+  BoldFont       = *-700-roman,
+  BoldItalicFont = *-700-italic,
+  Ligatures      = TeX]
+\setsansfont{cmu-sans-serif}[
+  Path           = fonts/,
+  Extension      = .ttf,
+  UprightFont    = *-500-roman,
+  ItalicFont     = *-500-italic,
+  BoldFont       = *-700-roman,
+  BoldItalicFont = *-700-italic,
+  Ligatures      = TeX]
+\setmonofont{cmu-typewriter-text-500-roman}[Path=fonts/, Extension=.ttf]
+\newfontfamily\cyrillicfont{cmu-serif}[
+  Path=fonts/, Extension=.ttf, UprightFont=*-500-roman, ItalicFont=*-500-italic,
+  BoldFont=*-700-roman, BoldItalicFont=*-700-italic, Ligatures=TeX]
+\newfontfamily\cyrillicfontsf{cmu-sans-serif}[
+  Path=fonts/, Extension=.ttf, UprightFont=*-500-roman, ItalicFont=*-500-italic,
+  BoldFont=*-700-roman, BoldItalicFont=*-700-italic, Ligatures=TeX]
+\newfontfamily\cyrillicfonttt{cmu-typewriter-text-500-roman}[Path=fonts/, Extension=.ttf]
+
+\setmathfont{latinmodern-math.otf}
+
+\usepackage{icomma}           % десятичная запятая в формулах: 0,529
+\linespread{1.06}
+\setlength{\parindent}{1.25em}
+\setlength{\parskip}{0.25em plus 0.15em}
+\setlength{\emergencystretch}{2.5em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+
+% ---------- Цвета ----------
+\usepackage{xcolor}
+\definecolor{accent}{HTML}{1F4E79}
+\definecolor{accentlight}{HTML}{EAF1F8}
+\definecolor{defcol}{HTML}{2E6DA4}
+\definecolor{defbg}{HTML}{F2F7FB}
+\definecolor{keycol}{HTML}{8A3B12}
+\definecolor{keybg}{HTML}{FBF4EE}
+\definecolor{dercol}{HTML}{4F6B2E}
+\definecolor{derbg}{HTML}{F5F8F0}
+\definecolor{remcol}{HTML}{6B6B6B}
+\definecolor{examcol}{HTML}{6A1B5A}
+\definecolor{exambg}{HTML}{F8F0F6}
+\definecolor{qbg}{HTML}{F1F1F1}
+
+% ---------- Графика ----------
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,decorations.pathmorphing,decorations.markings,
+                patterns,positioning,shapes.geometric,angles,quotes}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18,
+  every axis/.append style={font=\small, line width=0.6pt,
+     tick style={line width=0.5pt}},
+  every axis label/.append style={font=\small}}
+\usepgfplotslibrary{fillbetween}
+\tikzset{>={Stealth[length=2.2mm]}}
+
+% ---------- Таблицы, списки, подписи ----------
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\setlist{itemsep=1pt, topsep=3pt, parsep=1pt, leftmargin=1.6em}
+\usepackage[font=small,labelfont=bf,labelsep=period,
+            figurename=Рис.,tablename=Таблица,skip=4pt]{caption}
+\usepackage{float}
+\usepackage{needspace}
+
+% ---------- Заголовки ----------
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+  {\normalfont\sffamily\color{accent}}
+  {\large\MakeUppercase{Билет}~\thechapter}
+  {4pt}
+  {\LARGE\bfseries\raggedright}
+  [\vspace{3pt}{\color{accent}\titlerule[0.8pt]}]
+\titlespacing*{\chapter}{0pt}{-6pt}{10pt}
+\titleformat{name=\chapter,numberless}[display]
+  {\normalfont\sffamily\color{accent}}{}{0pt}
+  {\LARGE\bfseries\raggedright}[\vspace{3pt}{\color{accent}\titlerule[0.8pt]}]
+\titlespacing*{name=\chapter,numberless}{0pt}{-6pt}{10pt}
+
+\titleformat{\section}
+  {\normalfont\sffamily\large\bfseries\color{accent}}{\thesection}{0.7em}{}
+\titlespacing*{\section}{0pt}{2.0ex plus 0.6ex minus 0.3ex}{1.0ex plus 0.3ex}
+\titleformat{\subsection}
+  {\normalfont\sffamily\bfseries}{\thesubsection}{0.6em}{}
+\titlespacing*{\subsection}{0pt}{1.6ex plus 0.5ex minus 0.3ex}{0.6ex plus 0.2ex}
+\titleformat{\subsubsection}[runin]
+  {\normalfont\bfseries}{}{0pt}{}[.]
+\titlespacing*{\subsubsection}{0pt}{1.0ex plus 0.3ex}{0.6em}
+
+% Запрет «висячих» заголовков внизу страницы
+\usepackage{etoolbox}
+\pretocmd{\section}{\needspace{12\baselineskip}}{}{}
+\pretocmd{\subsection}{\needspace{10\baselineskip}}{}{}
+
+% ---------- Оглавление ----------
+\usepackage{titletoc}
+\titlecontents{chapter}[5.4em]
+  {\addvspace{3pt}\sffamily}
+  {\contentslabel[\textbf{Билет~\thecontentslabel}]{5.4em}}
+  {}
+  {\titlerule*[0.6pc]{.}\contentspage}
+\setcounter{tocdepth}{0}
+
+% ---------- Колонтитулы ----------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{Билет~\thechapter.\ #1}{}}
+\fancyhead[L]{\small\sffamily\color{accent}\leftmark}
+\fancyhead[R]{}
+\fancyfoot[C]{\small\sffamily\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[C]{\small\sffamily\thepage}
+  \renewcommand{\headrulewidth}{0pt}}
+
+% ---------- Цветные блоки ----------
+\usepackage[most]{tcolorbox}
+\tcbset{
+  basebox/.style={enhanced, breakable, boxrule=0pt, arc=1.5pt, outer arc=1.5pt,
+     left=7pt, right=7pt, top=4pt, bottom=4pt, before skip=7pt, after skip=7pt,
+     fonttitle=\sffamily\bfseries\small, coltitle=black, attach title to upper,
+     after title={.\ }, parbox=false}
+}
+% Формулировка билета
+\newtcolorbox{qbox}{enhanced, breakable, colback=qbg, colframe=accent,
+  boxrule=0pt, leftrule=3pt, arc=0pt, left=8pt, right=8pt, top=6pt, bottom=6pt,
+  before skip=4pt, after skip=10pt, fontupper=\itshape, parbox=false}
+% Определение
+\newtcolorbox{definition}[1][]{basebox, colback=defbg, colframe=defcol,
+  leftrule=2.5pt, title={Определение\ifstrempty{#1}{}{ (#1)}}}
+% Закон / постулат / принцип / теорема
+\newtcolorbox{principle}[1]{basebox, colback=defbg, colframe=defcol,
+  leftrule=2.5pt, title={#1}}
+% Ключевой результат
+\newtcolorbox{keyresult}[1][Ключевой результат]{basebox, colback=keybg,
+  colframe=keycol, boxrule=0.6pt, leftrule=2.5pt, title={#1}}
+% Вывод (нумерация внутри билета; метка: \begin{derivation}[label=der:x]{Заголовок})
+\newtcolorbox[auto counter, number within=chapter]{derivbox}[2][]{basebox,
+  colback=derbg, colframe=dercol, leftrule=2.5pt,
+  title={Вывод~\thetcbcounter: #2}, after title={\par\smallskip}, #1}
+\newenvironment{derivation}[2][]
+  {\par\needspace{9\baselineskip}\begin{derivbox}[#1]{#2}}
+  {\end{derivbox}}
+% Защита от отрыва заголовка блока от его содержимого
+\BeforeBeginEnvironment{definition}{\par\needspace{4\baselineskip}}
+\BeforeBeginEnvironment{principle}{\par\needspace{4\baselineskip}}
+\BeforeBeginEnvironment{keyresult}{\par\needspace{4\baselineskip}}
+\BeforeBeginEnvironment{remark}{\par\needspace{4\baselineskip}}
+% Замечание
+\newtcolorbox{remark}[1][Замечание]{basebox, colback=white, colframe=remcol,
+  leftrule=1.2pt, title={#1}, fontupper=\small}
+% Экзаменационный чек-лист
+\newtcolorbox{examcheck}{enhanced, breakable, colback=exambg, colframe=examcol,
+  boxrule=0.6pt, arc=1.5pt, left=8pt, right=8pt, top=6pt, bottom=6pt,
+  before skip=6pt, after skip=6pt, parbox=false}
+
+% ---------- Итоговые формулы ----------
+% \keyformula{формула}{обозначения}{условия применимости}{что позволяет найти}
+\newcommand{\keyformula}[4]{%
+  \par\needspace{6\baselineskip}%
+  \begin{tcolorbox}[enhanced, breakable=false, colback=keybg, colframe=keycol,
+     boxrule=0.5pt, leftrule=2.5pt, arc=1.5pt, left=7pt, right=7pt,
+     top=4pt, bottom=4pt, before skip=5pt, after skip=5pt,
+     before upper={\setlength{\parindent}{0pt}\setlength{\parskip}{1pt}}]
+  {\centering $\displaystyle #1$\par}\vspace{5pt}
+  {\small\textbf{Обозначения:} #2\par
+   \textbf{Условия:} #3\par
+   \textbf{Смысл:} #4\par}
+  \end{tcolorbox}}
+
+% Подзаголовки шаблона внутри «Что необходимо знать на экзамене»
+\newcommand{\checkhead}[1]{\par\smallskip\noindent{\sffamily\bfseries\color{examcol}#1}\par\nopagebreak}
+
+% ---------- Макросы обозначений ----------
+\newcommand{\vect}[1]{\symbf{#1}}            % вектор
+\newcommand{\op}[1]{\hat{#1}}                 % оператор
+\newcommand{\vop}[1]{\hat{\symbf{#1}}}        % векторный оператор
+\newcommand{\dd}{\mathrm{d}}                  % дифференциал
+\newcommand{\ii}{\mathrm{i}}                  % мнимая единица
+\newcommand{\ee}{\mathrm{e}}                  % основание экспоненты
+\newcommand{\diff}[2]{\frac{\dd #1}{\dd #2}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\avg}{\langle}{\rangle}
+\DeclarePairedDelimiterX{\comm}[2]{[}{]}{#1,#2}
+\newcommand{\const}{\mathrm{const}}
+\newcommand{\sh}{\operatorname{sh}}
+\newcommand{\ch}{\operatorname{ch}}
+\renewcommand{\th}{\operatorname{th}}
+\newcommand{\tg}{\operatorname{tg}}
+\newcommand{\ctg}{\operatorname{ctg}}
+\newcommand{\arctg}{\operatorname{arctg}}
+\newcommand{\Ry}{\mathrm{Ry}}
+\newcommand{\lC}{\lambda_{\mathrm C}}
+\newcommand{\aB}{a_{\mathrm B}}
+\newcommand{\muB}{\mu_{\mathrm B}}
+\newcommand{\mel}{m_e}
+\newcommand{\unit}[1]{\,\mathrm{#1}}
+\newcommand{\eV}{\,\text{эВ}}
+\newcommand{\keV}{\,\text{кэВ}}
+\newcommand{\MeV}{\,\text{МэВ}}
+\newcommand{\GeV}{\,\text{ГэВ}}
+\newcommand{\fm}{\,\text{фм}}
+\newcommand{\nm}{\,\text{нм}}
+\newcommand{\pmet}{\,\text{пм}}
+\newcommand{\Ang}{\,\text{Å}}
+\newcommand{\cm}{\,\text{см}}
+\newcommand{\m}{\,\text{м}}
+\newcommand{\s}{\,\text{с}}
+\newcommand{\K}{\,\text{К}}
+\newcommand{\Tl}{\,\text{Тл}}
+\newcommand{\nuc}[3]{{}^{#2}_{#3}\mathrm{#1}}  % \nuc{U}{238}{92}
+\newcommand{\nucl}[2]{{}^{#2}\mathrm{#1}}      % \nucl{U}{238}
+\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+
+% Нумерация формул внутри билета
+\numberwithin{equation}{chapter}
+\numberwithin{figure}{chapter}
+\numberwithin{table}{chapter}
+
+% ---------- Гиперссылки ----------
+\usepackage[unicode=true, bookmarksnumbered=true, bookmarksopen=true,
+            bookmarksopenlevel=0, pdfpagelabels]{hyperref}
+\hypersetup{colorlinks=true, linkcolor=accent, urlcolor=accent, citecolor=accent,
+  pdftitle={Квантовая физика: подробные ответы на экзаменационные вопросы},
+  pdfsubject={Общая физика: квантовая физика, МФТИ, V семестр},
+  pdfkeywords={квантовая физика, МФТИ, экзамен}}
+\usepackage{bookmark}
+\bookmarksetup{depth=2}
+
+% Подпись «Билет» для \ref на главы
+\newcommand{\tref}[1]{билет~\ref{#1}}
+\newcommand{\Tref}[1]{Билет~\ref{#1}}

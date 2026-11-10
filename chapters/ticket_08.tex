@@ -1,0 +1,303 @@
+% ======================================================================
+\chapter[Гармонический осциллятор]%
+        {Одномерный гармонический осциллятор}
+\label{t:08}
+% ======================================================================
+
+\begin{qbox}
+\textbf{Билет 8.} Уровни энергии одномерного гармонического осциллятора (без вывода).
+Волновая функция основного состояния одномерного осциллятора.
+\end{qbox}
+
+\section{Содержание билета}
+
+\textbf{Подтемы:}
+\begin{enumerate}
+ \item постановка задачи: гамильтониан и стационарное уравнение Шредингера для осциллятора;
+ \item спектр $E_n=\hbar\omega(n+\frac12)$ — формулировка и обсуждение \emph{(без вывода, по программе)};
+ \item волновая функция основного состояния: получение, нормировка, проверка подстановкой;
+ \item энергия нулевых колебаний, её оценка из соотношения неопределённостей и экспериментальные проявления;
+ \item возбуждённые состояния (качественно), правила отбора, применения.
+\end{enumerate}
+
+\textbf{Необходимые понятия:} стационарное уравнение Шредингера (\tref{t:06});
+соотношение неопределённостей (\tref{t:02}, \tref{t:05}); гауссовы интегралы; классический
+осциллятор $x=x_0\cos\omega t$.
+
+\section{Определения и физические принципы}
+
+\begin{definition}[гармонический осциллятор]
+Частица массы $m$ в потенциале $U(x)=\dfrac{m\omega^2x^2}{2}=\dfrac{kx^2}{2}$, где $\omega=\sqrt{k/m}$ —
+классическая частота колебаний. Гамильтониан
+\begin{equation}\label{eq:8:H}
+  \op H=\frac{\op p^2}{2m}+\frac{m\omega^2x^2}{2}=-\frac{\hbar^2}{2m}\diff{^2}{x^2}+\frac{m\omega^2x^2}{2}.
+\end{equation}
+\end{definition}
+
+\emph{Почему осциллятор важен.} Любой гладкий потенциал вблизи минимума $x_0$ приближённо
+квадратичен: $U(x)\approx U(x_0)+\frac12U''(x_0)(x-x_0)^2$. Поэтому малые колебания атомов в
+молекулах и кристаллах, колебания мод электромагнитного поля (фотоны), фононы — всё это
+осцилляторы. \emph{Область применимости модели:} амплитуда колебаний мала по сравнению с масштабом,
+на котором потенциал отклоняется от параболы (ангармонизм).
+
+\begin{definition}[естественные масштабы]
+Параметры $m,\omega,\hbar$ задают единственные масштабы длины и энергии:
+\begin{equation}\label{eq:8:scales}
+  x_0=\sqrt{\frac{\hbar}{m\omega}},\qquad \hbar\omega,\qquad \xi=\frac{x}{x_0}.
+\end{equation}
+$x_0$ — амплитуда классических колебаний с энергией $\hbar\omega/2$.
+\end{definition}
+
+\section{Основная теория}
+
+\subsection{Уравнение и спектр}
+
+Стационарное уравнение Шредингера
+\begin{equation}\label{eq:8:sse}
+  -\frac{\hbar^2}{2m}\psi''+\frac{m\omega^2x^2}{2}\psi=E\psi
+\end{equation}
+в безразмерных переменных $\xi=x/x_0$, $\varepsilon=2E/\hbar\omega$ принимает вид
+\begin{equation}\label{eq:8:dimless}
+  \diff{^2\psi}{\xi^2}+(\varepsilon-\xi^2)\psi=0 .
+\end{equation}
+Потенциал неограниченно растёт, движение финитно при любой энергии — спектр целиком дискретный.
+
+\begin{principle}{Уровни энергии осциллятора (без вывода)}
+Решения~\eqref{eq:8:dimless}, удовлетворяющие условию $\psi\to0$ при $|\xi|\to\infty$, существуют
+только при $\varepsilon=2n+1$, т.\,е.
+\begin{equation}\label{eq:8:En}
+  E_n=\hbar\omega\Bigl(n+\frac12\Bigr),\qquad n=0,1,2,\dots
+\end{equation}
+Соответствующие волновые функции
+$\psi_n(\xi)=\dfrac{1}{\sqrt{2^nn!\sqrt\pi\,x_0}}\,H_n(\xi)\,\ee^{-\xi^2/2}$,
+где $H_n$ — полиномы Эрмита: $H_0=1$, $H_1=2\xi$, $H_2=4\xi^2-2$, $H_3=8\xi^3-12\xi$.
+\end{principle}
+
+\emph{Комментарий к «выводу».} Вывод основан на том, что при больших $|\xi|$ решение ведёт себя как
+$\ee^{\pm\xi^2/2}$; подстановка $\psi=h(\xi)\ee^{-\xi^2/2}$ даёт уравнение для $h$, решение которого
+в виде степенного ряда растёт как $\ee^{\xi^2}$, если ряд не обрывается. Обрыв ряда на $n$-м члене
+и даёт условие $\varepsilon=2n+1$. Альтернативный вывод — алгебраический метод
+операторов рождения и уничтожения. По программе вывод не требуется.
+
+\paragraph{Свойства спектра.}
+\begin{enumerate}
+ \item \textbf{Эквидистантность:} $E_{n+1}-E_n=\hbar\omega$ для всех $n$. Это совпадает с гипотезой
+       Планка об обмене энергией порциями $\hbar\omega$, но в квантовой механике она \emph{следует} из
+       уравнения Шредингера.
+ \item \textbf{Энергия нулевых колебаний} $E_0=\hbar\omega/2>0$: осциллятор не может покоиться в минимуме
+       потенциала (вывод~\ref{der:8:uncert}).
+ \item \textbf{Невырожденность:} каждому уровню отвечает одна функция (общее свойство связанных
+       состояний одномерного движения).
+ \item \textbf{Чётность:} $\psi_n(-x)=(-1)^n\psi_n(x)$ — следствие чётности $U(x)$.
+ \item \textbf{Узлы:} $\psi_n$ имеет $n$ нулей.
+ \item \textbf{Правило отбора} для дипольных переходов: $\Delta n=\pm1$ (матричный элемент
+       $\int\psi_{n'}x\psi_n\dd x\neq0$ лишь при $n'=n\pm1$). Поэтому излучение осциллятора имеет
+       единственную частоту $\omega$, как и в классике.
+\end{enumerate}
+
+\subsection{Основное состояние}
+
+Основное состояние ($n=0$) — гауссова функция (вывод~\ref{der:8:ground}):
+\begin{equation}\label{eq:8:psi0}
+  \psi_0(x)=\Bigl(\frac{m\omega}{\pi\hbar}\Bigr)^{1/4}\exp\Bigl(-\frac{m\omega x^2}{2\hbar}\Bigr)
+  =\frac{1}{\pi^{1/4}\sqrt{x_0}}\,\ee^{-x^2/2x_0^2},\qquad E_0=\frac{\hbar\omega}{2}.
+\end{equation}
+Свойства: $\avg x=0$, $\avg{x^2}=x_0^2/2$, $\avg{p^2}=\hbar^2/(2x_0^2)$ (вывод~\ref{der:8:means}),
+\[
+  \Delta x\,\Delta p=\frac{x_0}{\sqrt2}\cdot\frac{\hbar}{\sqrt2x_0}=\frac\hbar2,\qquad
+  \avg T=\avg U=\frac{\hbar\omega}{4}.
+\]
+Основное состояние осциллятора — состояние с минимальной неопределённостью; средние кинетическая
+и потенциальная энергии равны (теорема вириала для квадратичного потенциала).
+
+\paragraph{Выход за классические точки поворота.} Классически частица с энергией $\hbar\omega/2$
+колеблется между $\pm x_0$. Квантовая плотность $|\psi_0|^2$ отлична от нуля и при $|x|>x_0$.
+Вероятность обнаружить частицу в классически запрещённой области
+\[
+  w=2\int_{x_0}^{\infty}|\psi_0|^2\dd x=\frac{2}{\sqrt\pi}\int_1^\infty\ee^{-\xi^2}\dd\xi=\operatorname{erfc}(1)\approx0{,}16 .
+\]
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.66\linewidth, height=7.0cm, axis lines=middle,
+   xlabel={$x/x_0$}, ylabel={$E/\hbar\omega$}, xmin=-4.2, xmax=4.2, ymin=0, ymax=4.3,
+   xtick={-3,-2,-1,1,2,3}, ytick={0.5,1.5,2.5,3.5},
+   yticklabels={$\tfrac12$,$\tfrac32$,$\tfrac52$,$\tfrac72$},
+   samples=200, clip=false,
+   xlabel style={at={(ticklabel* cs:1)}, anchor=west},
+   ylabel style={at={(ticklabel* cs:1)}, anchor=south}]
+  \addplot[very thick, domain=-2.9:2.9] {x^2/2};
+  \foreach \n in {0,1,2} {
+    \pgfmathsetmacro{\En}{\n+0.5}
+    \pgfmathsetmacro{\xt}{sqrt(2*\n+1)}
+    \addplot[gray, dashed, domain=-\xt:\xt] {\En};
+  }
+  \addplot[accent, thick, domain=-4:4] {0.5 + 0.75*exp(-x^2/2)};
+  \addplot[keycol, thick, domain=-4:4] {1.5 + 0.75*1.414*x*exp(-x^2/2)};
+  \addplot[dercol, thick, domain=-4:4] {2.5 + 0.75*0.707*(2*x^2-1)*exp(-x^2/2)};
+  \node[font=\small, accent, anchor=west] at (axis cs:2.9,0.6) {$\psi_0$};
+  \node[font=\small, keycol, anchor=west] at (axis cs:2.9,1.6) {$\psi_1$};
+  \node[font=\small, dercol, anchor=west] at (axis cs:2.9,2.6) {$\psi_2$};
+  \node[font=\small] at (axis cs:-2.5,3.8) {$U=\frac{m\omega^2x^2}{2}$};
+\end{axis}
+\end{tikzpicture}
+\caption{Потенциал осциллятора, эквидистантные уровни $E_n=\hbar\omega(n+\frac12)$ и волновые
+функции трёх нижних состояний (смещены на уровень соответствующей энергии; масштаб по
+вертикали для $\psi_n$ произвольный). Штриховые отрезки ограничены классическими точками
+поворота $\pm\sqrt{2n+1}\,x_0$; волновые функции заходят за них.}
+\label{fig:8:osc}
+\end{figure}
+
+\subsection{Энергия нулевых колебаний: проявления}
+
+\begin{itemize}
+ \item \textbf{Гелий} не затвердевает при нормальном давлении вплоть до $T\to0$: энергия нулевых
+       колебаний лёгких атомов в «решётке» превышает выигрыш от слабого ван-дер-ваальсова притяжения.
+ \item \textbf{Изотопический эффект в молекулах:} энергия диссоциации $D_0=D_e-\hbar\omega/2$ зависит
+       от массы ядер через $\omega\propto1/\sqrt\mu$; у D$_2$ нулевая энергия меньше, и молекула связана
+       сильнее, чем H$_2$.
+ \item \textbf{Рассеяние рентгеновских лучей кристаллами} не исчезает полностью при $T\to0$: атомы
+       колеблются около узлов и при абсолютном нуле (фактор Дебая--Уоллера остаётся меньше единицы).
+ \item \textbf{Нулевые колебания электромагнитного поля} (энергия $\hbar\omega/2$ на моду) проявляются
+       в эффекте Казимира и лэмбовском сдвиге.
+\end{itemize}
+
+\subsection{Применения}
+
+Каждая мода электромагнитного поля в полости — осциллятор; состояние с $n$ квантами — $n$ фотонов
+моды, $E=\hbar\omega(n+\frac12)$. Колебательные уровни двухатомной молекулы $E_v=\hbar\omega(v+\frac12)$
+(\tref{t:11}); фононы в кристалле — кванты нормальных колебаний решётки.
+
+\section{Математические выводы}
+
+\begin{derivation}[label=der:8:uncert]{оценка энергии основного состояния из соотношения неопределённостей}
+В основном состоянии из-за симметрии $\avg x=\avg p=0$, поэтому $\avg{x^2}=(\Delta x)^2$,
+$\avg{p^2}=(\Delta p)^2$, и
+\[
+  E=\frac{(\Delta p)^2}{2m}+\frac{m\omega^2(\Delta x)^2}{2}\ge\frac{\hbar^2}{8m(\Delta x)^2}+\frac{m\omega^2(\Delta x)^2}{2},
+\]
+где использовано $\Delta p\ge\hbar/(2\Delta x)$. Минимизируем по $u=(\Delta x)^2$:
+$\dfrac{\dd}{\dd u}\Bigl(\dfrac{\hbar^2}{8mu}+\dfrac{m\omega^2u}{2}\Bigr)=-\dfrac{\hbar^2}{8mu^2}+\dfrac{m\omega^2}{2}=0$
+$\Rightarrow$ $u=\dfrac{\hbar}{2m\omega}$. Подставляя: $E_{\min}=\dfrac{\hbar\omega}{4}+\dfrac{\hbar\omega}{4}=\dfrac{\hbar\omega}{2}$.
+
+Оценка совпадает с точным значением, потому что основное состояние осциллятора — гауссово,
+для которого соотношение неопределённостей обращается в равенство. Физический смысл: сжатие волновой
+функции уменьшает $\avg U$, но увеличивает $\avg T$; минимум суммы достигается при $\Delta x=x_0/\sqrt2$.
+\end{derivation}
+
+\begin{derivation}[label=der:8:ground]{волновая функция основного состояния}
+\emph{Способ 1 (подбор вида решения).} Основное состояние не имеет узлов, чётно и должно убывать
+на бесконечности быстрее любой степени. Попробуем $\psi_0=C\ee^{-\beta x^2}$, $\beta>0$. Вычислим
+производные:
+\[
+  \psi_0'=-2\beta x\,\psi_0,\qquad \psi_0''=(-2\beta+4\beta^2x^2)\psi_0 .
+\]
+Подставим в~\eqref{eq:8:sse} и разделим на $\psi_0$:
+\[
+  -\frac{\hbar^2}{2m}\bigl(4\beta^2x^2-2\beta\bigr)+\frac{m\omega^2x^2}{2}=E .
+\]
+Равенство должно выполняться при всех $x$, поэтому коэффициент при $x^2$ равен нулю, а
+свободные члены совпадают:
+\[
+  -\frac{2\hbar^2\beta^2}{m}+\frac{m\omega^2}{2}=0\ \Rightarrow\ \beta=\frac{m\omega}{2\hbar};\qquad
+  E=\frac{\hbar^2\beta}{m}=\frac{\hbar\omega}{2}.
+\]
+(Корень $\beta=-m\omega/2\hbar$ отброшен — функция была бы ненормируемой.)
+
+\emph{Способ 2 (факторизация).} Гамильтониан можно записать как
+$\op H=\hbar\omega\bigl(\op a^\dagger\op a+\frac12\bigr)$, где
+$\op a=\frac{1}{\sqrt2}\bigl(\xi+\diff{}{\xi}\bigr)$. Поскольку $\avg{\op a^\dagger\op a}=\int|\op a\psi|^2\ge0$,
+энергия не меньше $\hbar\omega/2$, и минимум достигается при $\op a\psi_0=0$:
+\[
+  \xi\psi_0+\diff{\psi_0}{\xi}=0\quad\Longrightarrow\quad\frac{\dd\psi_0}{\psi_0}=-\xi\,\dd\xi
+  \quad\Longrightarrow\quad\psi_0=C\ee^{-\xi^2/2}=C\ee^{-m\omega x^2/2\hbar}.
+\]
+
+\emph{Нормировка.} С интегралом Пуассона $\int_{-\infty}^\infty\ee^{-\alpha x^2}\dd x=\sqrt{\pi/\alpha}$ при
+$\alpha=m\omega/\hbar$:
+\[
+  |C|^2\int_{-\infty}^{\infty}\ee^{-m\omega x^2/\hbar}\dd x=|C|^2\sqrt{\frac{\pi\hbar}{m\omega}}=1
+  \quad\Longrightarrow\quad C=\Bigl(\frac{m\omega}{\pi\hbar}\Bigr)^{1/4}.
+\]
+\emph{Проверка размерности:} $[m\omega x^2/\hbar]=\text{г}\cdot\text{с}^{-1}\text{см}^2/(\text{эрг}\cdot\text{с})=1$;
+$[C^2]=\text{см}^{-1}$, как и положено одномерной плотности вероятности.
+\end{derivation}
+
+\begin{derivation}[label=der:8:means]{средние значения в основном состоянии}
+$|\psi_0|^2=\dfrac{1}{\sqrt\pi x_0}\ee^{-x^2/x_0^2}$ — нормальное распределение с дисперсией $\sigma^2=x_0^2/2$.
+Поэтому $\avg x=0$, $\avg{x^2}=x_0^2/2=\hbar/(2m\omega)$, и
+\[
+  \avg U=\frac{m\omega^2}{2}\cdot\frac{\hbar}{2m\omega}=\frac{\hbar\omega}{4}.
+\]
+Кинетическая энергия: $\avg T=E_0-\avg U=\hbar\omega/4$; непосредственно —
+$\avg{p^2}=\hbar^2\int|\psi_0'|^2\dd x=\hbar^2\int\frac{x^2}{x_0^4}|\psi_0|^2\dd x=\frac{\hbar^2}{x_0^4}\cdot\frac{x_0^2}{2}=\frac{\hbar^2}{2x_0^2}=\frac{m\hbar\omega}{2}$,
+$\avg T=\avg{p^2}/2m=\hbar\omega/4$. Результаты согласуются.
+\end{derivation}
+
+\begin{derivation}[label=der:8:psi1]{проверка первого возбуждённого состояния}
+Пусть $\psi_1=Cx\,\ee^{-\beta x^2}$, $\beta=m\omega/2\hbar$. Тогда
+$\psi_1'=C(1-2\beta x^2)\ee^{-\beta x^2}$,
+$\psi_1''=C(-6\beta x+4\beta^2x^3)\ee^{-\beta x^2}=(-6\beta+4\beta^2x^2)\psi_1$.
+Подставляя в~\eqref{eq:8:sse}: $-\frac{\hbar^2}{2m}(4\beta^2x^2-6\beta)+\frac{m\omega^2x^2}{2}=E$. Члены с
+$x^2$ сокращаются при том же $\beta$, а $E=3\hbar^2\beta/m=\frac32\hbar\omega$ — в согласии с~\eqref{eq:8:En}
+при $n=1$. Функция нечётна и имеет один узел.
+\end{derivation}
+
+\section{Итоговые формулы}
+
+\keyformula{E_n=\hbar\omega\Bigl(n+\frac12\Bigr),\qquad n=0,1,2,\dots}
+ {$\omega=\sqrt{k/m}$ — классическая частота, $n$ — колебательное квантовое число.}
+ {строго параболический потенциал (малые колебания); вывод не требуется.}
+ {уровни энергии, частоты переходов ($\Delta n=\pm1$ $\Rightarrow$ $\omega$), нулевая энергия.}
+
+\keyformula{\psi_0(x)=\Bigl(\frac{m\omega}{\pi\hbar}\Bigr)^{1/4}\exp\Bigl(-\frac{m\omega x^2}{2\hbar}\Bigr),\qquad E_0=\frac{\hbar\omega}{2}}
+ {$x_0=\sqrt{\hbar/m\omega}$ — характерная длина; $|\psi_0|^2$ — гауссово распределение с $\sigma^2=x_0^2/2$.}
+ {основное состояние.}
+ {распределение координаты, средние энергии, вероятность выхода за точки поворота ($\approx16\,\%$).}
+
+\keyformula{\Delta x=\frac{x_0}{\sqrt2},\quad \Delta p=\frac{\hbar}{\sqrt2x_0},\quad \Delta x\Delta p=\frac\hbar2,\quad \avg T=\avg U=\frac{\hbar\omega}{4}}
+ {$x_0=\sqrt{\hbar/m\omega}$.}
+ {основное состояние.}
+ {основное состояние — состояние минимальной неопределённости.}
+
+\section{Физическая интерпретация}
+
+\textbf{Предельные случаи и соответствие.} При больших $n$ плотность $|\psi_n|^2$, усреднённая по
+осцилляциям, приближается к классической плотности $w_{\text{кл}}(x)=1/(\pi\sqrt{A^2-x^2})$, которая
+максимальна вблизи точек поворота (там частица движется медленно). Основное состояние, наоборот,
+имеет максимум в центре — сугубо квантовое поведение.
+
+\textbf{Зависимость от параметров.} $\hbar\omega=\hbar\sqrt{k/m}$: лёгкие частицы и жёсткие связи дают
+большие кванты. Для молекулы H$_2$ $\hbar\omega\approx0{,}55$~эВ $\gg k_{\mathrm B}T_{\text{комн}}\approx0{,}026$~эВ —
+колебания при комнатной температуре «заморожены» в основном состоянии; это объясняет
+теплоёмкость двухатомных газов $C_V=\frac52R$ вместо $\frac72R$.
+
+\textbf{Сравнение с ямой.} В бесконечной яме $E_n\propto n^2$ (уровни расходятся), в осцилляторе
+$E_n\propto n$ (эквидистантны), в кулоновском поле $E_n\propto-1/n^2$ (сгущаются). Характер спектра
+определяется тем, как быстро потенциал растёт с расстоянием.
+
+\section{Что необходимо знать на экзамене}
+
+\begin{examcheck}
+\checkhead{Определения}
+\begin{itemize}
+ \item гамильтониан осциллятора; масштаб $x_0=\sqrt{\hbar/m\omega}$; энергия нулевых колебаний.
+\end{itemize}
+\checkhead{Формулы}
+\begin{itemize}
+ \item $E_n=\hbar\omega(n+\frac12)$ (без вывода); $\psi_0=(m\omega/\pi\hbar)^{1/4}\ee^{-m\omega x^2/2\hbar}$;
+ \item $\avg{x^2}=\hbar/2m\omega$, $\avg T=\avg U=\hbar\omega/4$, $\Delta x\Delta p=\hbar/2$.
+\end{itemize}
+\checkhead{Выводы}
+\begin{itemize}
+ \item получение $\psi_0$ и $E_0$ подстановкой гауссовой функции; нормировка;
+ \item оценка $E_0=\hbar\omega/2$ из соотношения неопределённостей;
+ \item (желательно) проверка $\psi_1\propto x\ee^{-\beta x^2}$ и $E_1=\frac32\hbar\omega$.
+\end{itemize}
+\checkhead{Интерпретации}
+\begin{itemize}
+ \item эквидистантность и правило отбора $\Delta n=\pm1$; чётность и узлы $\psi_n$;
+ \item проникновение за классические точки поворота; проявления нулевых колебаний (He, изотопы, Казимир).
+\end{itemize}
+\end{examcheck}

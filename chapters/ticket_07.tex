@@ -1,0 +1,410 @@
+% ======================================================================
+\chapter[Потенциальная ступенька. Туннельный эффект]%
+        {Потенциальная ступенька. Прямоугольный барьер. Туннельный эффект}
+\label{t:07}
+% ======================================================================
+
+\begin{qbox}
+\textbf{Билет 7.} Рассеяние частиц на потенциальной ступеньке конечной высоты. Прохождение
+частицы через прямоугольный потенциальный барьер конечной ширины (туннельный эффект).
+Коэффициент прохождения для барьера произвольной формы.
+\end{qbox}
+
+\section{Содержание билета}
+
+\textbf{Подтемы:}
+\begin{enumerate}
+ \item постановка одномерной задачи рассеяния; коэффициенты отражения и прохождения через потоки;
+ \item ступенька: случаи $E>U_0$ (надбарьерное отражение) и $E<U_0$ (полное отражение, проникновение под ступеньку);
+ \item прямоугольный барьер: точный коэффициент прохождения, туннельный эффект, предел широкого барьера, резонансное прохождение при $E>U_0$;
+ \item квазиклассическая формула для барьера произвольной формы; примеры (холодная эмиссия, альфа-распад).
+\end{enumerate}
+
+\textbf{Необходимые понятия:} стационарное уравнение Шредингера и условия сшивания
+(\tref{t:06}); плотность потока вероятности $\vect j$ (\tref{t:04}); гиперболические функции.
+
+\section{Определения и физические принципы}
+
+\begin{definition}[задача рассеяния]
+Частица с энергией $E$ налетает из $x=-\infty$ на область, где потенциал $U(x)$ меняется.
+Ищется стационарное решение, которое слева содержит падающую и отражённую волны, справа —
+только прошедшую (уходящую на $+\infty$) волну. Спектр энергии непрерывный.
+\end{definition}
+
+\begin{definition}[коэффициенты отражения и прохождения]
+\begin{equation}\label{eq:7:RD}
+  R=\frac{|j_{\text{отр}}|}{j_{\text{пад}}},\qquad D=\frac{j_{\text{пр}}}{j_{\text{пад}}},\qquad R+D=1,
+\end{equation}
+где $j=\frac{\hbar}{m}\operatorname{Im}(\psi^*\psi')$ — плотности потоков вероятности в падающей,
+отражённой и прошедшей волнах. $R$ и $D$ — вероятности отражения и прохождения для одной частицы.
+\end{definition}
+
+\begin{definition}[туннельный эффект]
+Прохождение частицы через область, где её полная энергия меньше потенциальной ($E<U$),
+т.\,е. через классически запрещённую область, где кинетическая энергия была бы отрицательной.
+\end{definition}
+
+\emph{Физический смысл.} Классическая частица при $E>U_0$ проходит над ступенькой всегда, при
+$E<U_0$ — всегда отражается. Квантовая частица описывается волной, а для волны на любом
+резком изменении свойств среды возможны и отражение, и (через тонкий слой) проникновение —
+как при полном внутреннем отражении света, когда через узкий зазор свет частично проходит
+(«нарушенное полное внутреннее отражение»).
+
+\emph{Область применимости.} Одномерная стационарная задача; потенциал кусочно-постоянный
+(точные формулы) или плавный (квазиклассика). Взаимодействие с окружением, поглощение и
+спин не учитываются.
+
+\section{Основная теория}
+
+\subsection{Ступенька при $E>U_0$}
+
+Пусть $U(x)=0$ при $x<0$ и $U(x)=U_0$ при $x>0$ (рис.~\ref{fig:7:step}). Введём
+\[
+  k_1=\frac{\sqrt{2mE}}{\hbar},\qquad k_2=\frac{\sqrt{2m(E-U_0)}}{\hbar}.
+\]
+Решение: $\psi_1=\ee^{\ii k_1x}+r\,\ee^{-\ii k_1x}$ при $x<0$, $\psi_2=t\,\ee^{\ii k_2x}$ при $x>0$.
+Из непрерывности $\psi$ и $\psi'$ (вывод~\ref{der:7:step}):
+\begin{equation}\label{eq:7:stepRD}
+  R=\Bigl(\frac{k_1-k_2}{k_1+k_2}\Bigr)^2,\qquad D=\frac{4k_1k_2}{(k_1+k_2)^2}.
+\end{equation}
+Отражение есть даже при $E>U_0$ — чисто волновой эффект (\emph{надбарьерное отражение}),
+аналог отражения света от границы двух сред с показателями преломления $n_1/n_2=k_1/k_2$.
+При $E\to U_0$ ($k_2\to0$) $R\to1$; при $E\gg U_0$ $R\approx(U_0/4E)^2\to0$. Формулы симметричны
+относительно $k_1\leftrightarrow k_2$: отражение одинаково при движении «на ступеньку» и «со ступеньки» —
+классически невозможное отражение частицы, скатывающейся с обрыва.
+
+\subsection{Ступенька при $E<U_0$}
+
+При $x>0$ теперь $\psi''=\varkappa^2\psi$, $\varkappa=\sqrt{2m(U_0-E)}/\hbar$; ограниченное решение
+$\psi_2=t\,\ee^{-\varkappa x}$. Сшивание даёт $r=(k-\ii\varkappa)/(k+\ii\varkappa)$, $|r|=1$, т.\,е.
+\begin{equation}
+  R=1,\qquad D=0 .
+\end{equation}
+Отражение полное, но волновая функция проникает под ступеньку: $|\psi|^2\propto\ee^{-2\varkappa x}$.
+Глубина проникновения (по плотности вероятности)
+\begin{equation}\label{eq:7:depth}
+  \delta=\frac{1}{2\varkappa}=\frac{\hbar}{2\sqrt{2m(U_0-E)}} .
+\end{equation}
+Поток в затухающей волне равен нулю (функция $\ee^{-\varkappa x}$ действительна с точностью до постоянного
+множителя), поэтому частица не уходит на $+\infty$. Для электрона с $U_0-E=1$~эВ $\delta\approx1$~Å.
+Если бы при $x>0$ частицу обнаружили, это сопровождалось бы передачей ей энергии
+$\gtrsim\hbar^2/(m\delta^2)\sim U_0-E$ при локализации — противоречия с законом сохранения энергии нет.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.49\linewidth, height=4.8cm, axis lines=none, xmin=-6.5, xmax=6.5, ymin=-1.6, ymax=3.6, samples=300, clip=false]
+  \addplot[very thick] coordinates {(-6.3,0) (0,0) (0,2.0) (6.3,2.0)};
+  \addplot[gray, dashed] coordinates {(-6.3,2.9) (6.3,2.9)};
+  \node[font=\small, anchor=south east] at (axis cs:6.3,2.9) {$E>U_0$};
+  \node[font=\small, anchor=north west] at (axis cs:0.1,2.0) {$U_0$};
+  \addplot[accent, thick, domain=-6.3:0] {-0.9+0.45*cos(deg(2.2*x))+0.13*cos(deg(-2.2*x))};
+  \addplot[accent, thick, domain=0:6.3] {-0.9+0.58*cos(deg(0.95*x))};
+  \node[font=\small, accent] at (axis cs:-3.2,-1.5) {$\ee^{\ii k_1x}+r\ee^{-\ii k_1x}$};
+  \node[font=\small, accent] at (axis cs:3.2,-1.5) {$t\,\ee^{\ii k_2x}$};
+  \node[font=\small] at (axis cs:0,-0.15) {};
+\end{axis}
+\end{tikzpicture}\hfill
+\begin{tikzpicture}
+\begin{axis}[width=0.49\linewidth, height=4.8cm, axis lines=none, xmin=-6.5, xmax=6.5, ymin=-1.6, ymax=3.6, samples=300, clip=false]
+  \addplot[very thick] coordinates {(-6.3,0) (0,0) (0,2.8) (6.3,2.8)};
+  \addplot[gray, dashed] coordinates {(-6.3,1.5) (6.3,1.5)};
+  \node[font=\small, anchor=south west] at (axis cs:-6.3,1.5) {$E<U_0$};
+  \node[font=\small, anchor=south west] at (axis cs:0.1,2.8) {$U_0$};
+  \addplot[keycol, thick, domain=-6.3:0] {-0.9+0.7*cos(deg(1.6*x)+50)};
+  \addplot[keycol, thick, domain=0:6.3] {-0.9+0.7*cos(50)*exp(-1.1*x)};
+  \draw[<->] (axis cs:0,-1.35) -- (axis cs:0.91,-1.35);
+  \node[font=\small, anchor=west] at (axis cs:0.95,-1.35) {$\sim1/\varkappa$};
+\end{axis}
+\end{tikzpicture}
+\caption{Потенциальная ступенька. Слева: $E>U_0$ — частичное отражение, прошедшая волна
+имеет бо́льшую длину волны. Справа: $E<U_0$ — полное отражение (стоячая волна) и затухающая
+волна под ступенькой. Показан ход $\operatorname{Re}\psi$ (качественно).}
+\label{fig:7:step}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.62\linewidth, height=5.0cm, xlabel={$E/U_0$}, ylabel={$D$, $R$},
+   xmin=0, xmax=4, ymin=0, ymax=1.08, samples=200, legend pos=south east, legend style={font=\small, draw=none}]
+  \addplot[accent, very thick, domain=1.0001:4] {4*sqrt(1-1/x)/(1+sqrt(1-1/x))^2};
+  \addlegendentry{$D$}
+  \addplot[keycol, very thick, dashed, domain=1.0001:4] {((1-sqrt(1-1/x))/(1+sqrt(1-1/x)))^2};
+  \addlegendentry{$R$}
+  \addplot[keycol, very thick, dashed, forget plot] coordinates {(0,1) (1,1)};
+  \addplot[accent, very thick, forget plot] coordinates {(0,0) (1,0)};
+\end{axis}
+\end{tikzpicture}
+\caption{Коэффициенты прохождения и отражения для ступеньки в зависимости от $E/U_0$
+(расчёт по~\eqref{eq:7:stepRD}). При $E<U_0$ отражение полное.}
+\label{fig:7:stepD}
+\end{figure}
+
+\subsection{Прямоугольный барьер}
+
+Пусть $U(x)=U_0$ при $0<x<a$ и $U=0$ вне этого отрезка; $E<U_0$. В трёх областях:
+\[
+  \psi_{\mathrm I}=A\ee^{\ii kx}+B\ee^{-\ii kx},\quad
+  \psi_{\mathrm{II}}=C\ee^{\varkappa x}+D'\ee^{-\varkappa x},\quad
+  \psi_{\mathrm{III}}=F\ee^{\ii kx},
+\]
+$k=\sqrt{2mE}/\hbar$, $\varkappa=\sqrt{2m(U_0-E)}/\hbar$. Четыре условия сшивания при $x=0$ и $x=a$
+дают (вывод~\ref{der:7:barrier}) точный коэффициент прохождения
+\begin{equation}\label{eq:7:Dexact}
+  D=\frac{|F|^2}{|A|^2}=\left[1+\frac{U_0^2\,\sh^2(\varkappa a)}{4E(U_0-E)}\right]^{-1}.
+\end{equation}
+$D>0$ при любых $a$ и $E$ — частица с конечной вероятностью проходит сквозь классически
+непреодолимый барьер. Это \emph{туннельный эффект}. При $\varkappa a\gg1$ ($\sh\varkappa a\approx\frac12\ee^{\varkappa a}$):
+\begin{equation}\label{eq:7:Dthick}
+  D\approx\frac{16E(U_0-E)}{U_0^2}\,\ee^{-2\varkappa a}=D_0\exp\Bigl[-\frac2\hbar\sqrt{2m(U_0-E)}\,a\Bigr],
+\end{equation}
+где предэкспоненциальный множитель $D_0=16\frac{E}{U_0}\bigl(1-\frac{E}{U_0}\bigr)\le4$ — порядка единицы.
+Определяющей является экспонента: $D$ экспоненциально мал и чрезвычайно чувствителен к ширине
+барьера, его высоте и массе частицы.
+
+\paragraph{Надбарьерное прохождение ($E>U_0$).} Замена $\varkappa\to\ii k'$, $k'=\sqrt{2m(E-U_0)}/\hbar$,
+$\sh(\varkappa a)\to\ii\sin(k'a)$, $U_0-E\to-(E-U_0)$ даёт
+\begin{equation}\label{eq:7:Dabove}
+  D=\left[1+\frac{U_0^2\sin^2(k'a)}{4E(E-U_0)}\right]^{-1}.
+\end{equation}
+Даже над барьером $D<1$; но при $k'a=\pi n$ (на ширине барьера укладывается целое число
+полуволн) $D=1$ — \emph{резонансное прохождение}: волны, отражённые от двух границ, гасят
+друг друга. Аналог — просветление оптики. Для потенциальной ямы ($U_0<0$) этот эффект
+объясняет аномально малое рассеяние медленных электронов на атомах благородных газов
+(эффект Рамзауэра--Таунсенда).
+
+\paragraph{Численные примеры.} Электрон, $E=1$~эВ, $U_0=2$~эВ:
+$\varkappa=\sqrt{2\mel c^2(U_0-E)}/\hbar c=\sqrt{2\cdot0{,}511\cdot10^6\cdot1}/1973\ \text{Å}^{-1}=0{,}51\ \text{Å}^{-1}$.
+При $a=5$~Å: $\varkappa a=2{,}6$, $D\approx16\cdot0{,}25\cdot\ee^{-5{,}1}\approx0{,}024$. Протон с теми же $E$, $U_0$, $a$:
+$\varkappa$ больше в $\sqrt{1836}\approx43$ раза, $2\varkappa a\approx220$, $D\sim\ee^{-220}\sim10^{-96}$ —
+практически нуль. Туннелирование — явление для лёгких частиц и тонких барьеров (или для очень
+большого числа попыток, как в альфа-распаде).
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.9\linewidth, height=4.6cm, axis lines=none, xmin=-6.5, xmax=8.5, ymin=-1.9, ymax=3.6, samples=300, clip=false]
+  \addplot[very thick] coordinates {(-6.3,0) (0,0) (0,2.8) (2.4,2.8) (2.4,0) (8.3,0)};
+  \addplot[gray, dashed] coordinates {(-6.3,1.4) (8.3,1.4)};
+  \node[font=\small, anchor=south west] at (axis cs:-6.3,1.4) {$E$};
+  \node[font=\small, anchor=south] at (axis cs:1.2,2.8) {$U_0$};
+  \draw[<->] (axis cs:0,3.25) -- (axis cs:2.4,3.25) node[midway, above, font=\small] {$a$};
+  \addplot[accent, thick, domain=-6.3:0] {-1.0+0.75*cos(deg(1.8*x)+35)};
+  \addplot[accent, thick, domain=0:2.4] {-1.0+0.75*cos(35)*exp(-0.85*x)};
+  \addplot[accent, thick, domain=2.4:8.3] {-1.0+0.75*cos(35)*exp(-0.85*2.4)*cos(deg(1.8*(x-2.4)))};
+  \node[font=\small] at (axis cs:-3.2,-1.85) {I: падающая + отражённая};
+  \node[font=\small] at (axis cs:1.2,-1.85) {II};
+  \node[font=\small] at (axis cs:5.4,-1.85) {III: прошедшая};
+\end{axis}
+\end{tikzpicture}
+\caption{Туннелирование через прямоугольный барьер ($E<U_0$): под барьером волновая функция
+экспоненциально спадает, за барьером — бегущая волна малой амплитуды (качественно).}
+\label{fig:7:barrier}
+\end{figure}
+
+\subsection{Барьер произвольной формы}
+
+Для плавного барьера $U(x)$ и энергии $E$ ниже его вершины (рис.~\ref{fig:7:wkb}) в
+квазиклассическом приближении (вывод~\ref{der:7:wkb})
+\begin{equation}\label{eq:7:wkb}
+  D\approx\exp\left[-\frac{2}{\hbar}\int_{x_1}^{x_2}\sqrt{2m\bigl(U(x)-E\bigr)}\,\dd x\right],
+\end{equation}
+где $x_1$, $x_2$ — точки поворота ($U(x_{1,2})=E$). \emph{Условия применимости:} показатель
+экспоненты велик ($D\ll1$), и потенциал меняется плавно — мало меняется на длине
+$1/\varkappa(x)$ (квазиклассичность: $|\dd\lambda/\dd x|\ll1$), кроме окрестностей точек поворота.
+Предэкспоненциальный множитель порядка единицы при этом опускается.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[width=0.7\linewidth, height=4.6cm, axis lines=middle, xlabel={$x$}, ylabel={$U(x)$},
+   xmin=-4, xmax=4.5, ymin=0, ymax=3.4, xtick={-1.38,1.38}, xticklabels={$x_1$,$x_2$}, ytick={1.4},
+   yticklabels={$E$}, samples=200,
+   xlabel style={at={(ticklabel* cs:1)}, anchor=west}, ylabel style={at={(ticklabel* cs:1)}, anchor=south}]
+  \addplot[very thick, domain=-3.8:4.3, name path=U] {2.9*exp(-x^2/2.6)};
+  \addplot[gray, dashed, domain=-3.8:4.3, name path=E] {1.4};
+  \addplot[accent!35] fill between[of=U and E, soft clip={domain=-1.38:1.38}];
+\end{axis}
+\end{tikzpicture}
+\caption{Барьер произвольной формы. Закрашена область $x_1<x<x_2$, где $U>E$; именно
+интеграл по ней входит в показатель~\eqref{eq:7:wkb}.}
+\label{fig:7:wkb}
+\end{figure}
+
+\paragraph{Пример 1: холодная (автоэлектронная) эмиссия.} В сильном поле $\mathcal E$ у
+поверхности металла потенциальная энергия электрона вне металла $U(x)=E+A-e\mathcal Ex$ ($A$ —
+работа выхода, $E$ — энергия электрона на уровне Ферми). Барьер треугольный, точки поворота
+$x_1=0$, $x_2=A/e\mathcal E$:
+\[
+  \int_0^{A/e\mathcal E}\sqrt{2m(A-e\mathcal Ex)}\,\dd x=\sqrt{2m}\,\frac{2}{3}\frac{A^{3/2}}{e\mathcal E}
+  \quad\Longrightarrow\quad
+  D\approx\exp\Bigl(-\frac{4\sqrt{2m}\,A^{3/2}}{3\hbar e\mathcal E}\Bigr).
+\]
+Ток $\propto D$ резко растёт с полем (закон Фаулера--Нордгейма); заметная эмиссия начинается при
+$\mathcal E\sim10^7$--$10^8$~В/см. На туннелировании основаны также сканирующий туннельный
+микроскоп (ток экспоненциально зависит от зазора: изменение зазора на 1~Å меняет ток примерно на
+порядок) и туннельный диод.
+
+\paragraph{Пример 2: альфа-распад.} Альфа-частица в ядре туннелирует сквозь кулоновский барьер;
+вычисление интеграла~\eqref{eq:7:wkb} приводит к формуле Гамова и закону Гейгера--Нэттола (\tref{t:19}).
+
+\section{Математические выводы}
+
+\begin{derivation}[label=der:7:step]{ступенька при $E>U_0$}
+\emph{Решения.} При $x<0$: $\psi_1=\ee^{\ii k_1x}+r\ee^{-\ii k_1x}$ (амплитуда падающей волны
+принята равной 1). При $x>0$: $\psi_2=t\ee^{\ii k_2x}$ (волны, идущей из $+\infty$, нет).
+
+\emph{Сшивание при $x=0$:}
+\[
+  \psi_1(0)=\psi_2(0):\ 1+r=t;\qquad \psi_1'(0)=\psi_2'(0):\ \ii k_1(1-r)=\ii k_2t .
+\]
+Подставляя $t=1+r$ во второе: $k_1-k_1r=k_2+k_2r$, откуда
+\[
+  r=\frac{k_1-k_2}{k_1+k_2},\qquad t=1+r=\frac{2k_1}{k_1+k_2}.
+\]
+\emph{Потоки.} Для волны $c\,\ee^{\ii kx}$ поток $j=\hbar k|c|^2/m$. Поэтому
+\[
+  R=\frac{\hbar k_1|r|^2/m}{\hbar k_1/m}=\Bigl(\frac{k_1-k_2}{k_1+k_2}\Bigr)^2,\qquad
+  D=\frac{\hbar k_2|t|^2/m}{\hbar k_1/m}=\frac{k_2}{k_1}\frac{4k_1^2}{(k_1+k_2)^2}=\frac{4k_1k_2}{(k_1+k_2)^2}.
+\]
+\emph{Проверка:} $R+D=\dfrac{k_1^2-2k_1k_2+k_2^2+4k_1k_2}{(k_1+k_2)^2}=1$. Важно: $D\neq|t|^2$, так как
+скорости частиц по разные стороны ступеньки различны; коэффициенты определяются через потоки.
+\end{derivation}
+
+\begin{derivation}[label=der:7:stepbelow]{ступенька при $E<U_0$}
+При $x>0$: $\psi_2=t\ee^{-\varkappa x}$ (растущее решение $\ee^{+\varkappa x}$ отброшено как неограниченное).
+Сшивание: $1+r=t$, $\ii k(1-r)=-\varkappa t$. Отсюда $\ii k-\ii kr=-\varkappa-\varkappa r$ и
+\[
+  r=\frac{\ii k+\varkappa}{\ii k-\varkappa}=\frac{k-\ii\varkappa}{k+\ii\varkappa},\qquad
+  |r|^2=\frac{k^2+\varkappa^2}{k^2+\varkappa^2}=1 .
+\]
+Таким образом $R=1$. Отражённая волна сдвинута по фазе: $r=\ee^{-2\ii\phi}$, $\tg\phi=\varkappa/k$.
+Ток при $x>0$: $j=\frac{\hbar}{m}\operatorname{Im}(\psi_2^*\psi_2')=\frac{\hbar}{m}\operatorname{Im}(-\varkappa|t|^2\ee^{-2\varkappa x})=0$.
+\end{derivation}
+
+\begin{derivation}[label=der:7:barrier]{коэффициент прохождения прямоугольного барьера}
+\emph{Шаг 1 (сшивание при $x=a$).}
+\[
+  C\ee^{\varkappa a}+D'\ee^{-\varkappa a}=F\ee^{\ii ka},\qquad
+  \varkappa\bigl(C\ee^{\varkappa a}-D'\ee^{-\varkappa a}\bigr)=\ii kF\ee^{\ii ka}.
+\]
+Складывая и вычитая (после деления второго на $\varkappa$):
+\[
+  C=\frac{F\ee^{\ii ka}}{2}\Bigl(1+\frac{\ii k}{\varkappa}\Bigr)\ee^{-\varkappa a},\qquad
+  D'=\frac{F\ee^{\ii ka}}{2}\Bigl(1-\frac{\ii k}{\varkappa}\Bigr)\ee^{\varkappa a}.
+\]
+\emph{Шаг 2 (сшивание при $x=0$).} $A+B=C+D'$, $\ii k(A-B)=\varkappa(C-D')$. Исключая $B$:
+\[
+  2A=(C+D')+\frac{\varkappa}{\ii k}(C-D')=C\Bigl(1-\frac{\ii\varkappa}{k}\Bigr)+D'\Bigl(1+\frac{\ii\varkappa}{k}\Bigr).
+\]
+\emph{Шаг 3 (подстановка).} Вычислим произведения:
+\[
+  \Bigl(1+\frac{\ii k}{\varkappa}\Bigr)\Bigl(1-\frac{\ii\varkappa}{k}\Bigr)=2+\ii\Bigl(\frac k\varkappa-\frac\varkappa k\Bigr),\qquad
+  \Bigl(1-\frac{\ii k}{\varkappa}\Bigr)\Bigl(1+\frac{\ii\varkappa}{k}\Bigr)=2-\ii\Bigl(\frac k\varkappa-\frac\varkappa k\Bigr).
+\]
+Тогда
+\begin{align*}
+  2A&=\frac{F\ee^{\ii ka}}{2}\Bigl[2\bigl(\ee^{\varkappa a}+\ee^{-\varkappa a}\bigr)
+     -\ii\Bigl(\frac k\varkappa-\frac\varkappa k\Bigr)\bigl(\ee^{\varkappa a}-\ee^{-\varkappa a}\bigr)\Bigr],\\
+  A&=F\ee^{\ii ka}\Bigl[\ch\varkappa a+\ii\,\frac{\varkappa^2-k^2}{2k\varkappa}\,\sh\varkappa a\Bigr].
+\end{align*}
+\emph{Шаг 4 (коэффициент прохождения).} Скорости слева и справа одинаковы, поэтому $D=|F/A|^2$:
+\[
+  D^{-1}=\ch^2\varkappa a+\Bigl(\frac{\varkappa^2-k^2}{2k\varkappa}\Bigr)^2\sh^2\varkappa a
+  =1+\Bigl[1+\frac{(\varkappa^2-k^2)^2}{4k^2\varkappa^2}\Bigr]\sh^2\varkappa a
+  =1+\frac{(k^2+\varkappa^2)^2}{4k^2\varkappa^2}\sh^2\varkappa a ,
+\]
+где использовано $\ch^2=1+\sh^2$ и $4k^2\varkappa^2+(\varkappa^2-k^2)^2=(k^2+\varkappa^2)^2$.
+\emph{Шаг 5.} Так как $k^2+\varkappa^2=2mU_0/\hbar^2$, $k^2\varkappa^2=(2m/\hbar^2)^2E(U_0-E)$:
+\[
+  \frac{(k^2+\varkappa^2)^2}{4k^2\varkappa^2}=\frac{U_0^2}{4E(U_0-E)}
+  \quad\Longrightarrow\quad
+  D=\Bigl[1+\frac{U_0^2\sh^2\varkappa a}{4E(U_0-E)}\Bigr]^{-1}.
+\]
+\emph{Предел $\varkappa a\gg1$:} $\sh^2\varkappa a\approx\frac14\ee^{2\varkappa a}\gg1$, единицей можно пренебречь:
+$D\approx\dfrac{16E(U_0-E)}{U_0^2}\ee^{-2\varkappa a}$. \emph{Предел $a\to0$:} $D\to1$.
+\end{derivation}
+
+\begin{derivation}[label=der:7:wkb]{барьер произвольной формы (приближённый вывод)}
+\emph{Допущения:} $D\ll1$; $U(x)$ меняется плавно; отражения на внутренних границах и
+предэкспоненциальные множители не учитываются (их вклад — множитель порядка единицы).
+
+Разобьём область $x_1<x<x_2$ на узкие прямоугольные барьеры шириной $\dd x_i$ с высотой
+$U(x_i)$. Для каждого по~\eqref{eq:7:Dthick} $D_i\approx\exp[-2\varkappa(x_i)\,\dd x_i]$,
+$\varkappa(x)=\sqrt{2m(U(x)-E)}/\hbar$. Прохождение через последовательность барьеров — последовательные
+независимые события (при сделанных допущениях), поэтому
+\[
+  D\approx\prod_iD_i=\exp\Bigl[-2\sum_i\varkappa(x_i)\dd x_i\Bigr]\xrightarrow[\dd x_i\to0]{}
+  \exp\Bigl[-\frac2\hbar\int_{x_1}^{x_2}\sqrt{2m(U(x)-E)}\,\dd x\Bigr].
+\]
+Строгий вывод использует квазиклассическое (ВКБ) решение уравнения Шредингера
+$\psi\approx\frac{C}{\sqrt{\varkappa(x)}}\exp\bigl(\pm\int\varkappa\,\dd x\bigr)$ под барьером и сшивание вблизи
+точек поворота; он подтверждает показатель экспоненты. Для прямоугольного барьера формула
+воспроизводит~\eqref{eq:7:Dthick} с точностью до множителя $D_0$.
+\end{derivation}
+
+\section{Итоговые формулы}
+
+\keyformula{R=\Bigl(\frac{k_1-k_2}{k_1+k_2}\Bigr)^2,\quad D=\frac{4k_1k_2}{(k_1+k_2)^2}\ (E>U_0);\qquad R=1\ (E<U_0)}
+ {$k_1=\sqrt{2mE}/\hbar$, $k_2=\sqrt{2m(E-U_0)}/\hbar$.}
+ {одномерная ступенька высоты $U_0$, стационарный поток частиц.}
+ {вероятности отражения и прохождения; надбарьерное отражение.}
+
+\keyformula{D=\Bigl[1+\frac{U_0^2\sh^2\varkappa a}{4E(U_0-E)}\Bigr]^{-1}\approx\frac{16E(U_0-E)}{U_0^2}\ee^{-2\varkappa a}}
+ {$\varkappa=\sqrt{2m(U_0-E)}/\hbar$, $a$ — ширина, $U_0$ — высота барьера.}
+ {прямоугольный барьер, $E<U_0$; приближение — при $\varkappa a\gg1$.}
+ {вероятность туннелирования.}
+
+\keyformula{D\approx\exp\Bigl[-\frac2\hbar\int_{x_1}^{x_2}\sqrt{2m(U(x)-E)}\,\dd x\Bigr]}
+ {$x_1,x_2$ — точки поворота, $U(x_{1,2})=E$.}
+ {квазиклассика: показатель $\gg1$, потенциал плавный; точность — до множителя порядка 1.}
+ {туннелирование через барьер любой формы (эмиссия, альфа-распад, реакции синтеза).}
+
+\keyformula{\delta=\frac{1}{2\varkappa}=\frac{\hbar}{2\sqrt{2m(U_0-E)}}}
+ {$\delta$ — глубина проникновения под ступеньку (по плотности вероятности).}
+ {$E<U_0$.}
+ {масштаб области, куда частица «заходит» в классически запрещённую зону.}
+
+\section{Физическая интерпретация}
+
+\textbf{Зависимости.} Показатель туннельной экспоненты $\propto a\sqrt{m(U_0-E)}$: увеличение массы в
+4 раза или ширины вдвое возводит $D$ в квадрат. Поэтому туннелирование электронов —
+повседневное явление (контакты, СТМ, флеш-память), протонов — заметно в химии и термоядерном
+синтезе в звёздах, а макротела не туннелируют.
+
+\textbf{Предельные случаи.} $E\to U_0$: для ступеньки $R\to1$; $E\gg U_0$: $R\to0$, классический предел.
+$\hbar\to0$: $D\to0$ при $E<U_0$ и $D\to1$ при $E>U_0$ — классическое поведение.
+
+\textbf{Время и энергия.} Под барьером «кинетическая энергия отрицательна», но это не парадокс:
+кинетическая энергия и координата не измеримы одновременно точно. Обнаружить частицу под барьером
+на глубине $\delta$ можно, лишь сообщив ей энергию $\sim\hbar^2/m\delta^2\gtrsim U_0-E$.
+
+\textbf{Эксперимент.} Туннельный эффект подтверждается холодной эмиссией, работой туннельного
+диода (Эсаки, 1957), эффектом Джозефсона, СТМ (Бинниг и Рорер, 1981), законом Гейгера--Нэттола.
+
+\section{Что необходимо знать на экзамене}
+
+\begin{examcheck}
+\checkhead{Определения}
+\begin{itemize}
+ \item задача рассеяния; коэффициенты $R$, $D$ через потоки; туннельный эффект.
+\end{itemize}
+\checkhead{Формулы}
+\begin{itemize}
+ \item ступенька: $R=((k_1-k_2)/(k_1+k_2))^2$, $D=4k_1k_2/(k_1+k_2)^2$; при $E<U_0$ $R=1$, $\delta=1/2\varkappa$;
+ \item барьер: точная формула для $D$ и её предел $D\approx D_0\ee^{-2\varkappa a}$; резонанс при $k'a=\pi n$;
+ \item квазиклассическая формула $D\approx\exp(-\frac2\hbar\int\sqrt{2m(U-E)}\dd x)$.
+\end{itemize}
+\checkhead{Выводы}
+\begin{itemize}
+ \item сшивание для ступеньки (оба случая), проверка $R+D=1$;
+ \item коэффициент прохождения прямоугольного барьера (шаги 1--5);
+ \item квазиклассическая формула как произведение коэффициентов тонких барьеров; треугольный барьер.
+\end{itemize}
+\checkhead{Интерпретации}
+\begin{itemize}
+ \item почему $D\neq|t|^2$; надбарьерное отражение; оптические аналогии;
+ \item экспоненциальная чувствительность к массе и ширине (электрон vs протон); применения.
+\end{itemize}
+\end{examcheck}

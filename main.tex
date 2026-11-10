@@ -1,0 +1,70 @@
+% ======================================================================
+%  Квантовая физика (МФТИ, V семестр): подробные ответы на 20 вопросов
+%  Сборка:  latexmk   (настройки в .latexmkrc; движок LuaLaTeX)
+% ======================================================================
+\documentclass[11pt,a4paper,oneside,openany]{report}
+\input{preamble}
+
+\begin{document}
+
+% ---------------------------- Титульный лист ----------------------------
+\begin{titlepage}
+\pdfbookmark[0]{Титульный лист}{title}
+\sffamily
+\vspace*{18mm}
+\noindent{\color{accent}\rule{\linewidth}{1.2pt}}\par\vspace{8mm}
+{\large Московский физико-технический институт\par
+ ПИШ ФАЛТ · Кафедра общей физики\par}
+\vspace{22mm}
+{\Huge\bfseries\color{accent} Квантовая физика\par}
+\vspace{6mm}
+{\LARGE Подробные ответы на экзаменационные вопросы\par}
+\vspace{10mm}
+{\large Курс «Общая физика: Квантовая физика»\par
+ Специальность «Прикладная математика и информатика»\par
+ III курс, V семестр, 2026--2027 учебный год\par}
+\vfill
+\begin{tcolorbox}[enhanced, colback=accentlight, colframe=accent, boxrule=0pt,
+  leftrule=3pt, arc=0pt, left=8pt, fontupper=\normalfont\small]
+Пособие для самостоятельной подготовки к устному экзамену. Каждый из 20~билетов
+оформлен по единому шаблону: формулировка вопроса, определения, основная теория,
+математические выводы, итоговые формулы, физическая интерпретация и краткий
+перечень того, что необходимо знать на экзамене. Формулы записаны в гауссовой
+системе единиц (переход к СИ описан на с.~\pageref{sec:units}).
+\end{tcolorbox}
+\vspace{6mm}
+\noindent{\color{accent}\rule{\linewidth}{1.2pt}}\par
+\end{titlepage}
+
+% ---------------------------- Оглавление ----------------------------
+\pagenumbering{arabic}
+\setcounter{page}{2}
+\pdfbookmark[0]{Оглавление}{toc}
+\tableofcontents
+\markboth{Оглавление}{}
+
+\input{chapters/notation}
+
+% ---------------------------- Билеты ----------------------------
+\input{chapters/ticket_01}
+\input{chapters/ticket_02}
+\input{chapters/ticket_03}
+\input{chapters/ticket_04}
+\input{chapters/ticket_05}
+\input{chapters/ticket_06}
+\input{chapters/ticket_07}
+\input{chapters/ticket_08}
+\input{chapters/ticket_09}
+\input{chapters/ticket_10}
+\input{chapters/ticket_11}
+\input{chapters/ticket_12}
+\input{chapters/ticket_13}
+\input{chapters/ticket_14}
+\input{chapters/ticket_15}
+\input{chapters/ticket_16}
+\input{chapters/ticket_17}
+\input{chapters/ticket_18}
+\input{chapters/ticket_19}
+\input{chapters/ticket_20}
+
+\end{document}
